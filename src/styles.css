@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+.main-wrapper {
+  background-image: url("https://mars.nasa.gov/system/downloadable_items/44966_PIXL_smaller.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  padding-top: 60px;
+}

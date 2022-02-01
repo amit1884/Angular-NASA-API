@@ -1,0 +1,30 @@
+.content {
+  color: #000;
+}
+
+.space-img {
+  width: 100%;
+  height: 200px;
+}
+
+.content table {
+  width: 100%;
+}
+.mytable td {
+  width: 50%;
+  padding: 6px;
+  font-size: 14px;
+}
+.card {
+  position: relative;
+  margin: 10px;
+}
+.active {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background-color: greenyellow;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}

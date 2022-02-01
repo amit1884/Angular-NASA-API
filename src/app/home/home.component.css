@@ -1,0 +1,48 @@
+/* .main-wrapper {
+  background-image: url("https://mars.nasa.gov/system/downloadable_items/44966_PIXL_smaller.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 92vh;
+} */
+
+.about {
+  margin: 10px;
+}
+.about p {
+  font-size: 20px;
+  font-weight: 500;
+  color: aliceblue;
+  line-height: 2.2;
+}
+.rover {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  height: 300px;
+  border-radius: 10px;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(300px);
+  transition: all 0.3s;
+}
+.rover img {
+  width: 100%;
+  height: 100%;
+}
+
+.rover:hover .overlay {
+  transform: translateY(0);
+  cursor: pointer;
+}
