@@ -1,0 +1,20 @@
+.main-wrapper {
+  background-image: url("https://mars.nasa.gov/system/downloadable_items/44966_PIXL_smaller.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 92vh;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.about {
+  width: 800px;
+}
+.about p {
+  font-size: 20px;
+  font-weight: 550;
+  color: aliceblue;
+}
