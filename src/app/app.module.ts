@@ -8,6 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RoverDetailsComponent } from './rover-details/rover-details.component';
 import { RoverCardComponent } from './rover-details/rover-card/rover-card.component';
+import { FilterComponent } from './rover-details/filter/filter.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { SpinnerComponent } from './rover-details/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +20,12 @@ import { RoverCardComponent } from './rover-details/rover-card/rover-card.compon
     HomeComponent,
     SidebarComponent,
     RoverDetailsComponent,
-    RoverCardComponent
+    RoverCardComponent,
+    FilterComponent,
+    SpinnerComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

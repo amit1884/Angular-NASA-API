@@ -2,15 +2,27 @@
   <div class="row">
     <div class="col-12">
       <div class="rover-list">
-        <div class="single-rover">
-          <p>Curiosity</p>
-        </div>
-        <div class="single-rover">
-          <p>Opportunity</p>
-        </div>
-        <div class="single-rover">
-          <p>Spirit</p>
-        </div>
+        <a routerLink="/rover-details/curiosity" class="single-rover">
+          <p
+            [ngStyle]="{ color: rover === 'curiosity' ? 'dodgerblue' : '#fff' }"
+          >
+            Curiosity
+          </p>
+        </a>
+        <a routerLink="/rover-details/opportunity" class="single-rover">
+          <p
+            [ngStyle]="{
+              color: rover === 'opportunity' ? 'dodgerblue' : '#fff'
+            }"
+          >
+            Opportunity
+          </p>
+        </a>
+        <a routerLink="/rover-details/spirit" class="single-rover">
+          <p [ngStyle]="{ color: rover === 'spirit' ? 'dodgerblue' : '#fff' }">
+            Spirit
+          </p>
+        </a>
       </div>
     </div>
   </div>

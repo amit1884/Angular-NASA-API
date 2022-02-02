@@ -6,22 +6,40 @@
     <div class="col-md-10">
       <div class="content-area">
         <div class="heading">
-          <h3 class="text-center">Rover Images</h3>
+          <h3 class="text-center" style="text-transform: capitalize">
+            {{ rover }}
+          </h3>
         </div>
+        <app-filter (newCamera)="newCamera($event)"></app-filter>
         <br />
-        <div class="row">
-          <div class="col-md-4 col-12">
-            <app-rover-card></app-rover-card>
+        <div class="row" *ngIf="loading">
+          <app-spinner></app-spinner>
+        </div>
+        <div
+          class="row"
+          style="display: flex; justify-content: center"
+          *ngIf="!loading"
+        >
+          <div class="col-md-4 col-12" *ngFor="let item of data">
+            <app-rover-card [cardItem]="item"></app-rover-card>
           </div>
-          <div class="col-md-4 col-12">
-            <app-rover-card></app-rover-card>
-          </div>
-          <div class="col-md-4 col-12">
-            <app-rover-card></app-rover-card>
-          </div>
-          <div class="col-md-4 col-12">
-            <app-rover-card></app-rover-card>
-          </div>
+        </div>
+        <div class="loader-more text-center" *ngIf="!loading">
+          <button
+            class="btn btn-lg btn-success text-light"
+            (click)="prevHandler()"
+            [ngStyle]="{
+              'background-color': page === 1 ? 'lightskyblue' : 'orange'
+            }"
+          >
+            Previous</button
+          >&nbsp;&nbsp;
+          <button
+            class="btn btn-lg btn-primary text-light"
+            (click)="nextHandler()"
+          >
+            Next
+          </button>
         </div>
       </div>
     </div>
