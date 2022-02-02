@@ -1,5 +1,16 @@
 # NasaMarsRovers
 
+### Features implemented in the app :-
+
+1. Home Screen displaying description of app and has option to choose any one rover to view in details .
+2. Rover Detail page :
+   1. It consists of a sidebar with all three rovers as option to choose.
+   2. Pagination added ,25 items per page (next and previos buttons are available)
+   3. Filter added on the basis of different cameras available.
+   4. Main content contains the list of all the images taken from tha different cameras in a card.
+   5. Card contains the image and the details related to it.
+   6. Responsive Design made with bootstrap.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
 
 ## Development server
