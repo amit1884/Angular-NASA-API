@@ -23,18 +23,16 @@ export class RoverDetailsComponent implements OnInit {
     });
   }
 
-  fetchPhotos() {
+  fetchPhotos(
+    url: string = `https://api.nasa.gov/mars-photos/api/v1/rovers/${this.route.snapshot.params['rover']}/photos?sol=1000&page=${this.page}&api_key=${this.api_key}`
+  ) {
     console.log('rover name', this.rover);
     this.loading = true;
-    this.http
-      .get(
-        `https://api.nasa.gov/mars-photos/api/v1/rovers/${this.route.snapshot.params['rover']}/photos?sol=1000&page=${this.page}&api_key=${this.api_key}`
-      )
-      .subscribe((response: any) => {
-        console.log(response);
-        this.data = response.photos;
-        this.loading = false;
-      });
+    this.http.get(url).subscribe((response: any) => {
+      console.log(response);
+      this.data = response.photos;
+      this.loading = false;
+    });
   }
 
   nextHandler() {
@@ -48,5 +46,10 @@ export class RoverDetailsComponent implements OnInit {
 
   newCamera(newCam: string) {
     console.log('rover details', newCam);
+    if (newCam !== 'all')
+      this.fetchPhotos(
+        `https://api.nasa.gov/mars-photos/api/v1/rovers/${this.route.snapshot.params['rover']}/photos?sol=1000&camera=${newCam}&page=${this.page}&api_key=${this.api_key}`
+      );
+    else this.fetchPhotos();
   }
 }
