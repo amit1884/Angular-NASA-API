@@ -8,10 +8,14 @@ export class FilterComponent implements OnInit {
   @Output() newCamera = new EventEmitter<string>();
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (localStorage.getItem('camera'))
+      this.newCamera.emit(JSON.stringify(localStorage.getItem('camera')));
+  }
 
   onSelectCamera(value: string) {
     // console.log(value.toLocaleLowerCase());
+    localStorage.setItem('camera', value.toLocaleLowerCase());
     this.newCamera.emit(value.toLocaleLowerCase());
   }
 }

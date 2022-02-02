@@ -46,3 +46,15 @@
   transform: translateY(0);
   cursor: pointer;
 }
+
+@media (max-width: 800px) {
+  .about {
+    margin: 10px;
+  }
+  .about p {
+    font-size: 17px;
+    font-weight: 500;
+    color: aliceblue;
+    line-height: 1.7;
+  }
+}

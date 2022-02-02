@@ -1,6 +1,31 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
-  <a class="navbar-brand" routerLink="/" style="color: #fff; margin-left: 20px"
+  <a
+    class="navbar-brand"
+    routerLink="/"
+    style="color: #fff; margin-left: 20px"
+    (click)="hideSideBar()"
     ><span><img src="../assets/image/nasa.png" alt="logo" class="logo" /></span
     >Mars Rovers</a
   >
+  <div class="mb-style">
+    <button class="nav-btn" (click)="showSideBar()">
+      <i class="bi bi-list" *ngIf="!show"></i>
+      <i class="bi bi-x" *ngIf="show"></i>
+    </button>
+    <div class="links-container" [ngClass]="show ? 'show' : ''">
+      <ul>
+        <li (click)="hideSideBar()">
+          <a routerLink="/rover-details/curiosity" class="link">Curiosity</a>
+        </li>
+        <li (click)="hideSideBar()">
+          <a routerLink="/rover-details/opportunity" class="link"
+            >Opportunity</a
+          >
+        </li>
+        <li (click)="hideSideBar()">
+          <a routerLink="/rover-details/spirit" class="link">Spirit</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
