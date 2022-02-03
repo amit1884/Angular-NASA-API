@@ -6,7 +6,7 @@
 2. Rover Detail page :
    1. It consists of a sidebar with all three rovers as option to choose.
    2. Pagination added ,25 items per page (next and previos buttons are available)
-   3. Filter added on the basis of different cameras available.
+   3. Filter added on the basis of different cameras,sol and earth date available.
    4. Main content contains the list of all the images taken from tha different cameras in a card.
    5. Card contains the image and the details related to it.
    6. Responsive Design made with bootstrap.
