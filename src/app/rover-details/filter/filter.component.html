@@ -6,17 +6,18 @@
         #val
         aria-label="Default select example"
         (change)="onSelectCamera(val.value)"
+        [value]="cam"
       >
-        <option value="ALL" selected>All</option>
-        <option value="FHAZ">Front Hazard Avoidance Camera</option>
-        <option value="RHAZ">Rear Hazard Avoidance Camera</option>
-        <option value="MAST">Mast Camera</option>
-        <option value="CHEMCAM">Chemistry and Camera Complex</option>
-        <option value="MAHLI">Mars Hand Lens Imager</option>
-        <option value="MARDI">Mars Descent Imager</option>
-        <option value="NAVCAM">Navigation Camera</option>
-        <option value="PANCAM">Panoramic Camera</option>
-        <option value="MINITES">
+        <option value="all">All</option>
+        <option value="fhaz">Front Hazard Avoidance Camera</option>
+        <option value="rhaz">Rear Hazard Avoidance Camera</option>
+        <option value="mast">Mast Camera</option>
+        <option value="chemcam">Chemistry and Camera Complex</option>
+        <option value="mahli">Mars Hand Lens Imager</option>
+        <option value="mardi">Mars Descent Imager</option>
+        <option value="navcam">Navigation Camera</option>
+        <option value="pancam">Panoramic Camera</option>
+        <option value="minites">
           Miniature Thermal Emission Spectrometer (Mini-TES)
         </option>
       </select>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
@@ -6,16 +6,14 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FilterComponent implements OnInit {
   @Output() newCamera = new EventEmitter<string>();
+  @Input() cam: string = '';
+
   constructor() {}
 
-  ngOnInit(): void {
-    if (localStorage.getItem('camera'))
-      this.newCamera.emit(JSON.stringify(localStorage.getItem('camera')));
-  }
+  ngOnInit(): void {}
 
   onSelectCamera(value: string) {
-    // console.log(value.toLocaleLowerCase());
-    localStorage.setItem('camera', value.toLocaleLowerCase());
+    // localStorage.setItem('Local-camera', value);
     this.newCamera.emit(value.toLocaleLowerCase());
   }
 }

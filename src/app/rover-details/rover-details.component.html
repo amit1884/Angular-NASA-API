@@ -10,7 +10,7 @@
             {{ rover }}
           </h3>
         </div>
-        <app-filter (newCamera)="newCamera($event)"></app-filter>
+        <app-filter (newCamera)="newCamera($event)" [cam]="camera"></app-filter>
         <br />
         <div class="row" *ngIf="loading">
           <app-spinner></app-spinner>

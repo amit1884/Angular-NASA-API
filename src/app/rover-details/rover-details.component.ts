@@ -11,7 +11,9 @@ export class RoverDetailsComponent implements OnInit {
   data = [];
   page = 1;
   api_key = 'X6f0wu1SqNlgbQV8pu2KtEb3R0bewi4xvWh5KBcM';
-  loading = false;
+  loading: boolean = false;
+
+  camera: any = '';
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit(): void {
@@ -19,14 +21,18 @@ export class RoverDetailsComponent implements OnInit {
 
     this.route.params.subscribe((param: Params) => {
       this.rover = param['rover'];
+      this.camera = 'all';
+      this.page = 1;
       this.fetchPhotos();
     });
+    // this.camera = localStorage.getItem('Local-camera')
+    //   ? localStorage.getItem('Local-camera')
+    //   : 'all';
   }
-
+  // Main data fetching function
   fetchPhotos(
     url: string = `https://api.nasa.gov/mars-photos/api/v1/rovers/${this.route.snapshot.params['rover']}/photos?sol=1000&page=${this.page}&api_key=${this.api_key}`
   ) {
-    console.log('rover name', this.rover);
     this.loading = true;
     this.http.get(url).subscribe((response: any) => {
       console.log(response);
@@ -44,11 +50,14 @@ export class RoverDetailsComponent implements OnInit {
     this.fetchPhotos();
   }
 
+  // Setting the camera name for filtering
   newCamera(newCam: string) {
-    console.log('rover details', newCam);
+    // console.log('rover details', newCam);
+    this.page = 1;
+    this.camera = newCam;
     if (newCam !== 'all')
       this.fetchPhotos(
-        `https://api.nasa.gov/mars-photos/api/v1/rovers/${this.route.snapshot.params['rover']}/photos?sol=1000&camera=${newCam}&page=${this.page}&api_key=${this.api_key}`
+        `https://api.nasa.gov/mars-photos/api/v1/rovers/${this.route.snapshot.params['rover']}/photos?sol=1000&camera=${this.camera}&page=${this.page}&api_key=${this.api_key}`
       );
     else this.fetchPhotos();
   }
