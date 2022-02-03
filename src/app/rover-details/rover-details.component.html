@@ -5,13 +5,29 @@
     </div>
     <div class="col-md-10">
       <div class="content-area">
-        <div class="heading">
-          <h3 class="text-center" style="text-transform: capitalize">
+        <div
+          class="heading"
+          style="display: flex; justify-content: space-around; margin-top: 10px"
+        >
+          <h3
+            class="text-center"
+            style="text-transform: capitalize; text-decoration: underline"
+          >
             {{ rover }}
           </h3>
         </div>
-        <app-filter (newCamera)="newCamera($event)" [cam]="camera"></app-filter>
+        <!-- <app-filter (newCamera)="newCamera($event)" [cam]="camera"></app-filter> -->
         <br />
+        <!-- Filter area -->
+        <app-filter-form
+          (solFilter)="solFilter($event)"
+          (earthDateFilter)="earthDateFilter($event)"
+          (cam)="(camera)"
+          (sol)="(sol)"
+          (e_date)="(e_date)"
+        ></app-filter-form>
+
+        <!-- Filter End -->
         <div class="row" *ngIf="loading">
           <app-spinner></app-spinner>
         </div>
@@ -20,6 +36,7 @@
             <h1 class="text-center">No photos available</h1>
           </div>
         </div>
+
         <div
           class="row"
           style="display: flex; justify-content: center"

@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6 col-sm-10">
+    <div class="form-group">
+      <p class="text-center">Camera</p>
+      <select
+        class="form-select"
+        #val
+        aria-label="Default select example"
+        name="camera-name"
+        [(ngModel)]="cam"
+      >
+        <option value="all">All</option>
+        <option value="fhaz">Front Hazard Avoidance Camera</option>
+        <option value="rhaz">Rear Hazard Avoidance Camera</option>
+        <option value="mast">Mast Camera</option>
+        <option value="chemcam">Chemistry and Camera Complex</option>
+        <option value="mahli">Mars Hand Lens Imager</option>
+        <option value="mardi">Mars Descent Imager</option>
+        <option value="navcam">Navigation Camera</option>
+        <option value="pancam">Panoramic Camera</option>
+        <option value="minites">
+          Miniature Thermal Emission Spectrometer (Mini-TES)
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-2">
+    <button class="btn btn-danger" (click)="resetFilter()">Reset Filter</button>
+  </div>
+  <div class="col-md-6">
+    <form (ngSubmit)="solChangeHandler()">
+      <div class="form-group">
+        <p class="text-center">Marsian Sol</p>
+        <input
+          type="text"
+          name="sol"
+          placeholder="Marsian Sol"
+          class="form-control"
+          [(ngModel)]="sol"
+        />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary form-control" type="submit">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <form (ngSubmit)="earthDateChangeHandler()">
+      <div class="form-group">
+        <p class="text-center">Earth Date</p>
+        <input
+          type="date"
+          class="form-control"
+          name="earth-date"
+          [(ngModel)]="e_date"
+        />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary form-control" type="submit">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -12,6 +12,7 @@ import { FilterComponent } from './rover-details/filter/filter.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SpinnerComponent } from './rover-details/spinner/spinner.component';
+import { FilterFormComponent } from './rover-details/filter-form/filter-form.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SpinnerComponent } from './rover-details/spinner/spinner.component';
     RoverCardComponent,
     FilterComponent,
     SpinnerComponent,
+    FilterFormComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
